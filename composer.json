@@ -13,5 +13,7 @@
             "name": "Kilian ALVES, Alexis Jacquin"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-pdo": "*"
+    }
 }
