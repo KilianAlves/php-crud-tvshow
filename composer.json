@@ -1,0 +1,17 @@
+{
+    "name": "alve0031/crud-tvshow",
+    "description": "Un application php de série télévisé",
+    "type": "project",
+    "license": "Copyleft",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kilian ALVES, Alexis Jacquin"
+        }
+    ],
+    "require": {}
+}
