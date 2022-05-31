@@ -10,6 +10,15 @@ class tvshow
     private string $originalName;
     private string $homepage;
     private string $overview;
+    private int $posterId;
+
+    /**
+     * @return int
+     */
+    public function getPosterId(): int
+    {
+        return $this->posterId;
+    }
 
     /**
      * @return int
