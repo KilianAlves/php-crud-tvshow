@@ -5,12 +5,10 @@ declare(strict_types=1);
 use Entity\Poster;
 
 
-if (!isset($_GET['coverId']) || !ctype_digit($_GET['coverId'])) {
-    throw new ParameterException();
-}
 
-$cover = Poster::findById((int)$_GET['coverId']);
+
+$poster = Poster::findById((int)$_GET['id']);
 
 header("Content-Type: image/jpeg");
 
-echo $cover->getJpeg();
+echo $poster->getJpeg();
