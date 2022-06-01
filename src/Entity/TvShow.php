@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Entity;
 
 use Database\MyPdo;
+use Entity\Exception\EntityNotFoundException;
+use PDO;
 
 class TvShow
 {
@@ -62,11 +64,11 @@ class TvShow
         return $this->overview;
     }
 
-    public static function findById(int $id): Artist
+    public static function findById(int $id): TvShow
     {
         $AlbumEtDate = MyPDO::getInstance()->prepare(
             <<<'SQL'
-            SELECT id, name
+            SELECT id, name,originalName,overview,homepage,posterId
             FROM tvshow
             WHERE id = ? 
             SQL
