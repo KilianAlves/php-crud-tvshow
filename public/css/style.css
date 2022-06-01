@@ -33,6 +33,12 @@ body > main {
     flex-direction: column;
 }
 
+
+/*
+    Style pour la collection de Series (TvShow)
+    index.php
+*/
+
 .serie:nth-child(odd) {
     background-color: #001D3D;
     padding: 15px;
@@ -59,6 +65,51 @@ body > main {
     justify-content: center;
     align-items: center;
 }
+
+
+/*
+    Style pour les collections de Saison d'une serie (Season)
+    serie.php
+*/
+
+.season {
+    background-color: #001D3D;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.season:first-child > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 4;
+}
+
+.season:first-child > div:nth-child(2) {
+    margin: 15px;
+    flex-grow: 8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.season:first-child > div:nth-child(2) > p {
+    align-items: flex-start;
+}
+
+.season:nth-child(1n+2) {
+    align-items:center;
+}
+
+.season:nth-child(1n+2) > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*=============================================*/
 
 body > footer {
     background-color: rgb(53, 53, 53);
