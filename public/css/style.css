@@ -18,11 +18,13 @@ body > header {
     border-radius: 10px;
 }
 
-body > div {
+body > main {
     background-color: #003566;
     padding: 10px 10px 0px 10px;
     margin-bottom: 5px;
     border-radius: 10px;
+    flex-grow: 1;
+    overflow: auto;
 }
 
 .serie {
