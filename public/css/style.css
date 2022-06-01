@@ -21,17 +21,43 @@ body > header {
 body > main {
     background-color: #003566;
     padding: 10px 10px 0px 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    border: 10px solid #003566;
     border-radius: 10px;
     flex-grow: 1;
     overflow: auto;
 }
 
-.serie {
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.serie:nth-child(odd) {
     background-color: #001D3D;
-    padding: 10px;
-    margin-bottom: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
     border-radius: 10px;
+    display: flex;
+}
+
+.serie:nth-child(even) {
+    background-color: #001D3D;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.serie > div:nth-child(2) {
+    margin: 15px;
+}
+
+.serie > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body > footer {
@@ -42,5 +68,16 @@ body > footer {
 }
 
 a {
-    color: #FFD60A;
+    color: #001D3D;
+    text-decoration: none;
+    background-color: #FFD60A;
+    padding: 5px 7px 5px 7px;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 960px) {
+    body {
+        width: 800px;
+        margin: auto;
+    }
 }
