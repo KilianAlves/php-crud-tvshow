@@ -21,7 +21,7 @@ body > header {
 body > main {
     background-color: #003566;
     padding: 10px 10px 0px 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border: 10px solid #003566;
     border-radius: 10px;
     flex-grow: 1;
@@ -67,4 +67,11 @@ a {
     background-color: #FFD60A;
     padding: 5px 7px 5px 7px;
     border-radius: 10px;
+}
+
+@media screen and (min-width: 960px) {
+    body {
+        width: 800px;
+        margin: auto;
+    }
 }
