@@ -5,12 +5,12 @@ namespace Entity\Collection;
 
 use PDO;
 use Database\MyPdo;
-use Entity\season;
+use Entity\Season;
 
 class SeasonCollection
 {
     /**
-     * La methode cree un tableau avec tout de tvShow
+     * La methode cree un tableau avec tout de season
      *
      * @return season[]
      */
@@ -24,7 +24,7 @@ class SeasonCollection
             ORDER BY seasonNumber;
             SQL
             );
-        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, season::class);
+        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Season::class);
         $stmt->execute(['tvShowId' => $tvShowId]);
 
         return $stmt->fetchAll();
