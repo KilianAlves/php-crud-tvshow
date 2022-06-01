@@ -72,7 +72,32 @@ body > main {
     serie.php
 */
 
+.season:nth-child(1) {
+    background-color: #001D3D;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+}
 
+.season:first-child > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 4;
+}
+
+.season:first-child > div:nth-child(2) {
+    margin: 15px;
+    flex-grow: 8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.season:first-child > div:nth-child(2) > p {
+    align-items: flex-start;
+}
 
 /*=============================================*/
 
