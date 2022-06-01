@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Entity;
 
+use Database\MyPdo;
+
 class TvShow
 {
     private int $id;
@@ -60,5 +62,24 @@ class TvShow
         return $this->overview;
     }
 
+    public static function findById(int $id): Artist
+    {
+        $AlbumEtDate = MyPDO::getInstance()->prepare(
+            <<<'SQL'
+            SELECT id, name
+            FROM tvshow
+            WHERE id = ? 
+            SQL
+        );
 
+        #execute le sql
+        $AlbumEtDate->execute([$id]);
+        $AlbumEtDate->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, TvShow::class);
+        $artist = $AlbumEtDate->fetch();
+
+        if ($artist === false) {
+            throw new EntityNotFoundException("Artist with id $id not found");
+        }
+        return $artist;
+    }
 }
