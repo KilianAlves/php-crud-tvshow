@@ -31,7 +31,7 @@ class Poster
         $sqlStatementCover = MyPdo::getInstance()->prepare(
             <<<SQL
             SELECT id, jpeg
-            FROM cover
+            FROM poster
             WHERE id = :id
             SQL
         );
