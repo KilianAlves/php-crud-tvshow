@@ -39,7 +39,7 @@ foreach ($listeSeason as $Season) {
     $webPage->appendContent("<div class='season'>");
     $webPage->appendContent("<div><img src='poster.php?id={$photoSeason}'></div>");
     $webPage->appendContent("<div>");
-    $webPage->appendContent("<h2>{$nameSeason}</h2>");
+    $webPage->appendContent("<h2><a href='season.php?seasonId={$lienEpisode}'>{$nameSeason}</a></h2>");
     $webPage->appendContent("</div></div>");
 }
 
