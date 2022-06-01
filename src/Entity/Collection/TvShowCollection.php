@@ -4,14 +4,14 @@ namespace Entity\Collection;
 
 use PDO;
 use Database\MyPdo;
-use Entity\tvshow;
+use Entity\TvShow;
 
 class TvShowCollection
 {
     /**
      * La methode cree un tableau avec tout du tvShow
      *
-     * @return tvshow[]
+     * @return TvShow[]
      */
     public static function findAll(): array
     {
@@ -26,7 +26,7 @@ class TvShowCollection
         );
         $stmt->execute();
 
-        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, tvshow::class);
+        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, TvShow::class);
 
         return $stmt->fetchAll();
     }
