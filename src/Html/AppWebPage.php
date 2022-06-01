@@ -32,13 +32,13 @@ HTML
         <header class="header">
             <h1>$title</h1>
         </header>
-        <div class="content">
+        <main>
            <div class="list">
          
                     {$body}
             
             </div>
-        </div>
+        </main>
        <footer class="footer">
        
              
