@@ -50,8 +50,14 @@ body > main {
     flex-direction: row-reverse;
 }
 
-.serie > div {
+.serie > div:nth-child(2) {
     margin: 15px;
+}
+
+.serie > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body > footer {
