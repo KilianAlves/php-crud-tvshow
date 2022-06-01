@@ -33,6 +33,12 @@ body > main {
     flex-direction: column;
 }
 
+
+/*
+    Style pour la collection de Series (TvShow)
+    index.php
+*/
+
 .serie:nth-child(odd) {
     background-color: #001D3D;
     padding: 15px;
@@ -59,6 +65,16 @@ body > main {
     justify-content: center;
     align-items: center;
 }
+
+
+/*
+    Style pour les collections de Saison d'une serie (Season)
+    serie.php
+*/
+
+
+
+/*=============================================*/
 
 body > footer {
     background-color: rgb(53, 53, 53);
