@@ -11,7 +11,7 @@ foreach (TvShowCollection::findAll() as $serie) {
     $textname = $webPage::escapeString($serie->getName()); #Titre serie
     $resume = $webPage::escapeString($serie->getOverview()); #Description serie
     $webPage->appendContent("<div class='serie'>");#Div deb
-    $webPage->appendContent("<img src='poster.php?id={$serie->getPosterId()}'>");
+    $webPage->appendContent("<div><img src='poster.php?id={$serie->getPosterId()}'></div>");
     $webPage->appendContent("<div>");
     $webPage->appendContent("<p> <a href='serie.php?serieId={$serie->getId()}'>$textname</a></p>\n");
     $webPage->appendContent("<p>{$resume}</p>");
