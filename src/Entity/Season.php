@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Entity;
 
-class season
+class Season
 {
     private int $id;
     private int $tvShowId;
