@@ -2,6 +2,9 @@
 
 namespace Entity;
 
+use Database\MyPdo;
+use PDO;
+
 class Poster
 {
     private int $id;
@@ -21,5 +24,24 @@ class Poster
     public function getJpeg(): string
     {
         return $this->jpeg;
+    }
+
+    public static function findById(int $id): Poster
+    {
+        $sqlStatementCover = MyPdo::getInstance()->prepare(
+            <<<SQL
+            SELECT id, jpeg
+            FROM cover
+            WHERE id = :id
+            SQL
+        );
+
+        $sqlStatementCover->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Poster::class);
+        $sqlStatementCover->execute([":id" => $id]);
+
+        $coverFound = $sqlStatementCover->fetch();
+
+
+        return $coverFound;
     }
 }
