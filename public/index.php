@@ -13,7 +13,7 @@ foreach (TvShowCollection::findAll() as $serie) {
     $webPage->appendContent("<div class='serie'>");#Div deb
     $webPage->appendContent("<div><img src='poster.php?id={$serie->getPosterId()}'></div>");
     $webPage->appendContent("<div>");
-    $webPage->appendContent("<p> <a href='serie.php?serieId={$serie->getId()}'>$textname</a></p>\n");
+    $webPage->appendContent("<h3> <a href='serie.php?serieId={$serie->getId()}'>$textname</a></h3>\n");
     $webPage->appendContent("<p>{$resume}</p>");
     $webPage->appendContent("</div>");
     $webPage->appendContent("</div>"); #fin div deb
