@@ -72,7 +72,7 @@ body > main {
     serie.php
 */
 
-.season:nth-child(1) {
+.season {
     background-color: #001D3D;
     padding: 15px;
     margin-bottom: 10px;
@@ -97,6 +97,16 @@ body > main {
 
 .season:first-child > div:nth-child(2) > p {
     align-items: flex-start;
+}
+
+.season:nth-child(1n+2) {
+    align-items:center;
+}
+
+.season:nth-child(1n+2) > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*=============================================*/
