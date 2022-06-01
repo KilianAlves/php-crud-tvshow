@@ -36,6 +36,7 @@ $webPage->appendContent("</div></div>");
 foreach ($listeSeason as $Season) {
     $photoSeason = $webPage::escapeString("{$Season->getPosterId()}");
     $nameSeason = $webPage::escapeString("{$Season->getName()}");
+    $lienEpisode = $webPage::escapeString("{$Season->getId()}");
     $webPage->appendContent("<div class='season'>");
     $webPage->appendContent("<div><img src='poster.php?id={$photoSeason}'></div>");
     $webPage->appendContent("<div>");
