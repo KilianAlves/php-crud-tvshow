@@ -103,7 +103,12 @@ body > main {
     align-items:center;
 }
 
+.season:nth-child(1n+2) > div {
+    padding: 15px;
+}
+
 .season:nth-child(1n+2) > div:first-child {
+    padding: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
