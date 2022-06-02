@@ -4,6 +4,7 @@ namespace Entity\Collection;
 
 use Database\MyPdo;
 use Entity\Genre;
+use PDO;
 
 class GenreCollection
 {
@@ -13,7 +14,7 @@ class GenreCollection
         #recupere les nom des artistes
         $stmt = MyPDO::getInstance()->prepare(
             <<<'SQL'
-            SELECT id,genre
+            SELECT id,name 
             FROM genre
             ORDER BY name
             SQL
