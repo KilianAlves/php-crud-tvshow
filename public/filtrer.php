@@ -3,8 +3,20 @@
 declare(strict_types=1);
 
 use Entity\Collection\GenreCollection;
+use Entity\Collection\TvShowFiltreCollection;
 use Html\AppWebPage;
-use Entity\Collection\TvShowCollection;
+
+if (!isset($_GET["filtreId"]) || !ctype_digit($_GET["filtreId"])) {
+    header('Location: /');
+    exit();
+}
+if ($_GET["filtreId"] == "0") {
+    header('Location: /');
+    exit();
+}
+
+$filtreId = $_GET["filtreId"];
+$filtreId = (int)$filtreId;
 
 $webPage = new AppWebPage("Série TV");
 
@@ -20,18 +32,18 @@ $webPage->appendContent("</select>");
 $webPage->appendContent('<input type="submit"></input>');
 $webPage->appendContent("</form>");
 #Fin formulaire
-#Listes des series
-foreach (TvShowCollection::findAll() as $serie) {
+#Listes des films
+foreach (TvShowFiltreCollection::findAllByIdGenre($filtreId) as $serie) {
+    #EscapeString
     $textname = $webPage::escapeString($serie->getName()); #Titre serie
     $resume = $webPage::escapeString($serie->getOverview()); #Description serie
     $photo = $webPage::escapeString("{$serie->getPosterId()}");
     $lienSerie = $webPage::escapeString("{$serie->getId()}");
+    #AppendContent
     $webPage->appendContent("<div class='serie'>");#Div deb
     $webPage->appendContent("<div><img src='poster.php?id={$photo}'></div>");
     $webPage->appendContent("<div>");
     $webPage->appendContent("<h3> <a href='serie.php?serieId={$lienSerie}'>$textname</a></h3>\n");
-    $webPage->appendContent("<p>{$resume}</p>");
-    $webPage->appendContent("</div>");
-    $webPage->appendContent("</div>"); #fin div deb
+    $webPage->appendContent("<p>{$resume}</p></div></div>");#fin div deb
 }
 echo $webPage->toHTMl();
