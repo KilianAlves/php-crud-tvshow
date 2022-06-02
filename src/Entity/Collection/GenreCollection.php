@@ -3,6 +3,7 @@
 namespace Entity\Collection;
 
 use Database\MyPdo;
+use Entity\Genre;
 
 class GenreCollection
 {
@@ -19,7 +20,7 @@ class GenreCollection
         );
         $stmt->execute();
 
-        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, TvShow::class);
+        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Genre::class);
 
         return $stmt->fetchAll();
     }
