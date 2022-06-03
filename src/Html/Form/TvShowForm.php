@@ -39,11 +39,11 @@ class TvShowForm extends TvShow
         <form action="{$url}" method="post">
             <label for="name">Nom</label>
             <input name="name" type="text" value="{$htmlName}" required>
-            <label for="originalName">Nom</label>
+            <label for="originalName">Nom original</label>
             <input name="originalName" type="text" value="{$htmlOriginalName}" required>
-            <label for="homepage">Nom</label>
+            <label for="homepage">Homepage</label>
             <input name="homepage" type="text" value="{$htmlHomepage}" required>
-            <label for="overview">Nom</label>
+            <label for="overview">Résumé</label>
             <input name="overview" type="text" value="{$htmlOverview}" required>
             <input name="id" type="hidden" value="{$htmlId}">
             <input type="submit" value="Enregistrer">
