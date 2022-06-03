@@ -26,12 +26,12 @@ foreach (TvShowCollection::findAll() as $serie) {
     $resume = $webPage::escapeString($serie->getOverview()); #Description serie
     $photo = $webPage::escapeString("{$serie->getPosterId()}");
     $lienSerie = $webPage::escapeString("{$serie->getId()}");
-    $webPage->appendContent("<div class='serie'>");#Div deb
+    $webPage->appendContent("<a href='serie.php?serieId={$lienSerie}'><div class='serie'>");#Div deb
     $webPage->appendContent("<div><img src='poster.php?id={$photo}'></div>");
     $webPage->appendContent("<div>");
-    $webPage->appendContent("<h3> <a href='serie.php?serieId={$lienSerie}'>$textname</a></h3>\n");
+    $webPage->appendContent("<h3>$textname</h3>\n");
     $webPage->appendContent("<p>{$resume}</p>");
     $webPage->appendContent("</div>");
-    $webPage->appendContent("</div>"); #fin div deb
+    $webPage->appendContent("</div></a>"); #fin div deb
 }
 echo $webPage->toHTMl();
