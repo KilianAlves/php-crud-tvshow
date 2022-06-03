@@ -30,7 +30,7 @@ $webPage->appendContent("<a href='admin/tvShow-form.php'>Ajouter une serie</a></
 foreach (TvShowCollection::findAll() as $serie) {
     $textname = $webPage::escapeString($serie->getName()); #Titre serie
     $resume = $webPage::escapeString($serie->getOverview()); #Description serie
-    $photo = $webPage::escapeString("{$serie->getPosterId()}");
+    $photo = $serie->getPosterId()??0;
     $lienSerie = $webPage::escapeString("{$serie->getId()}");
     $webPage->appendContent("<a href='serie.php?serieId={$lienSerie}'><div class='serie'>");#Div deb
     $webPage->appendContent("<div><img src='poster.php?id={$photo}'></div>");
