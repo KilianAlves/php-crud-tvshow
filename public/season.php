@@ -29,11 +29,12 @@ $listeEpisode = EpisodeCollection::findBySeasonId($seasonId);
 $photo = $webPage::escapeString("{$season->getPosterId()}");
 $nameSerie =$webPage::escapeString("{$serie->getName()}");
 $nameSeason =$webPage::escapeString("{$season->getName()}");
+$retourSerie = $webPage::escapeString("{$season->getTvShowId()}");
 
 $webPage->appendContent("<div>");
 $webPage->appendContent("<div><img src='poster.php?id={$photo}'></div>");
 $webPage->appendContent("<div>");
-$webPage->appendContent("<h3><a>{$nameSerie}</a></h3>");
+$webPage->appendContent("<h3><a href='serie.php?{$retourSerie}'>{$nameSerie}</a></h3>");
 $webPage->appendContent("<h3>{$nameSeason}</h3>");
 $webPage->appendContent("</div></div>");
 
