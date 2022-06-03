@@ -17,22 +17,8 @@ class TvShow
     private string $overview;
     private int $posterId;
 
-    /**
-     * @param int|null $id
-     * @param string $name
-     * @param string $originalName
-     * @param string $homepage
-     * @param string $overview
-     * @param int $posterId
-     */
-    public function __construct(?int $id = null, string $name, string $originalName, string $homepage, string $overview, int $posterId)
+    private function __construct()
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->originalName = $originalName;
-        $this->homepage = $homepage;
-        $this->overview = $overview;
-        $this->posterId = $posterId;
     }
 
     /**
@@ -83,6 +69,56 @@ class TvShow
         return $this->overview;
     }
 
+    /**
+     * @param int|null $id
+     */
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @param string $originalName
+     */
+    public function setOriginalName(string $originalName): void
+    {
+        $this->originalName = $originalName;
+    }
+
+    /**
+     * @param string $homepage
+     */
+    public function setHomepage(string $homepage): void
+    {
+        $this->homepage = $homepage;
+    }
+
+    /**
+     * @param string $overview
+     */
+    public function setOverview(string $overview): void
+    {
+        $this->overview = $overview;
+    }
+
+    /**
+     * @param int $posterId
+     */
+    public function setPosterId(int $posterId): void
+    {
+        $this->posterId = $posterId;
+    }
+
+
+
     public static function findById(int $id): TvShow
     {
         $AlbumEtDate = MyPDO::getInstance()->prepare(
@@ -103,6 +139,7 @@ class TvShow
         }
         return $artist;
     }
+
     public function delete()
     {
         #Supprime le Show
@@ -117,8 +154,15 @@ class TvShow
         $this->id = null;
         return $this;
     }
-    public static function create(string $name, string $originalName, string $homepage, string $overview, int $posterId, ?int $id = null): TvShow
+
+    public static function create(string $name, string $originalName, string $homepage, string $overview, int $posterId = null, ?int $id = null): TvShow
     {
-        return new TvShow($name,$originalName,$overview, (string)$posterId, (string)$id);
+        $show = new TvShow();
+        $show->setName($name);
+        $show->setOriginalName($originalName);
+        $show->setOverview($overview);
+        $show->setPosterId($posterId);
+        $show->setId($id);
+        return $show;
     }
 }
