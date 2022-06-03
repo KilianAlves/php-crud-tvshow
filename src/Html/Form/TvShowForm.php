@@ -25,5 +25,18 @@ class TvShowForm extends TvShow
         return $this->tvShow;
     }
 
+    public function getHtmlForm(string $url): string
+    {
+        $htmlName = ($this->tvShow == null) ? "" : $this->tvShow->getName();
+        $htmlId = ($this->tvShow == null) ? "" : $this->tvShow->getId();
 
+        return <<<HTML
+        <form action="{$url}" method="post">
+            <label for="name">Nom</label>
+            <input name="name" type="text" value="{$htmlName}" required>
+            <input name="id" type="hidden" value="{$htmlId}">
+            <input type="submit" value="Enregistrer">
+        </form>
+        HTML;
+    }
 }
