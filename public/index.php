@@ -8,8 +8,10 @@ use Entity\Collection\TvShowCollection;
 
 $webPage = new AppWebPage("Série TV");
 
+#Menu
 #Formulaire
-$webPage->appendContent('<form action="filtrer.php" method="GET">');
+
+$webPage->appendContent('<div class="menu"><form action="filtrer.php" method="GET">');
 $webPage->appendContent('<select name="filtreId" id="filtreId">');
 $webPage->appendContent('<option value="0">Pas de filtre</option>');
 #Les autres options
@@ -20,6 +22,10 @@ $webPage->appendContent("</select>");
 $webPage->appendContent('<input type="submit"></input>');
 $webPage->appendContent("</form>");
 #Fin formulaire
+
+$webPage->appendContent("<h3><a href='admin/tvShow-form.php'>Ajouter une serie</a></h3></div>");
+#fin Menu
+
 #Listes des series
 foreach (TvShowCollection::findAll() as $serie) {
     $textname = $webPage::escapeString($serie->getName()); #Titre serie
