@@ -20,4 +20,11 @@ try {
     $tvShowForm = new TvShowForm($tvShow);
     $tvShowForm->setEntityFromQueryString();
     $tvShowForm->getTvShow()->save();
+
+    header("Location: /index.php");
+
+} catch (ParameterException) {
+    http_response_code(400);
+} catch (Exception) {
+    http_response_code(500);
 }
