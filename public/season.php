@@ -46,7 +46,7 @@ foreach ($listeEpisode as $Episode) {
 
     $webPage->appendContent("<div class='episode'>");
     $webPage->appendContent("<div>");
-    $webPage->appendContent("<h3>{$numEpisode}</h3> - <h3>{$titreEpisode}</h3>");
+    $webPage->appendContent("<h3>{$numEpisode} - {$titreEpisode}</h3>");
     $webPage->appendContent("</div>");
     $webPage->appendContent("<div><p>{$descEpisode}</p></div>");
 
