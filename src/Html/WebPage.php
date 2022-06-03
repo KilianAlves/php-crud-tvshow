@@ -9,6 +9,7 @@ namespace Html;
  */
 class WebPage
 {
+    use StringEscaper;
     /**
      * @var string
      */
@@ -38,15 +39,6 @@ class WebPage
     public static function getLastModification(): string
     {
         return date(" d/m/Y à H:i:s", getlastmod());
-    }
-
-    /**
-     * @param string $chaine
-     * @return string retourne la chaine de charactere proteger
-     */
-    public static function escapeString(string $chaine): string
-    {
-        return htmlspecialchars($chaine, ENT_QUOTES | ENT_HTML5);
     }
 
     /**
