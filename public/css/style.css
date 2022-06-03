@@ -34,6 +34,40 @@ body > main {
     flex-direction: column;
 }
 
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .7em;
+}
+
+.menu > a, .menu > form > input {
+    border: none;
+    border-radius: .7em;
+    padding: .5em;
+    background-color: #FFD60A;
+    color: #001D3D;
+    text-decoration: none;
+}
+
+.menu > form > select {
+    margin-right: .7em;
+    border: none;
+    border-radius: .7em;
+    padding: .5em;
+    background-color: #FFD60A;
+    color: #001D3D;
+    text-decoration: none;
+}
+
+.menu > a:nth-child(3) {
+    border-radius: .7em;
+    padding: .5em;
+    background-color: #b90000;
+    color: aliceblue;
+    text-decoration: none;
+}
+
 
 /*
     Style pour la collection de Series (TvShow)
