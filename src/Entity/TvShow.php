@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Entity;
@@ -15,6 +16,24 @@ class TvShow
     private string $homepage;
     private string $overview;
     private int $posterId;
+
+    /**
+     * @param int|null $id
+     * @param string $name
+     * @param string $originalName
+     * @param string $homepage
+     * @param string $overview
+     * @param int $posterId
+     */
+    public function __construct(?int $id = null, string $name, string $originalName, string $homepage, string $overview, int $posterId)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->originalName = $originalName;
+        $this->homepage = $homepage;
+        $this->overview = $overview;
+        $this->posterId = $posterId;
+    }
 
     /**
      * @return int
@@ -98,4 +117,5 @@ class TvShow
         $this->id = null;
         return $this;
     }
+    
 }
