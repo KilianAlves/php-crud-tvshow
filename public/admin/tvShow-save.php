@@ -9,6 +9,7 @@ use Html\Form\TvShowForm;
 $webPage = new AppWebPage("Admin: TvShow");
 
 try {
+    $tvShow = null;
     if (isset($_GET['tvShowId'])) {
         if (!ctype_digit($_GET['tvShowId'])) {
             throw new ParameterException("Erreur de parametre");
@@ -19,7 +20,7 @@ try {
     }
     $tvShowForm = new TvShowForm($tvShow);
     $tvShowForm->setEntityFromQueryString();
-    $tvShowForm->getTvShow()->save();
+    $tvShowForm->getTvShow()?->save();
 
     header("Location: /index.php");
 
