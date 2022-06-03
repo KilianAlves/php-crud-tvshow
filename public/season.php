@@ -31,7 +31,7 @@ $nameSerie =$webPage::escapeString("{$serie->getName()}");
 $nameSeason =$webPage::escapeString("{$season->getName()}");
 $retourSerie = $webPage::escapeString("{$season->getTvShowId()}");
 
-$webPage->appendContent("<div>");
+$webPage->appendContent("<div class='episode'>");
 $webPage->appendContent("<div><img src='poster.php?id={$photo}'></div>");
 $webPage->appendContent("<div>");
 $webPage->appendContent("<h3><a href='serie.php?serieId={$retourSerie}'>{$nameSerie}</a></h3>");
@@ -46,7 +46,7 @@ foreach ($listeEpisode as $Episode) {
 
     $webPage->appendContent("<div class='episode'>");
     $webPage->appendContent("<div>");
-    $webPage->appendContent("<h3>{$numEpisode}</h3> - <h3>{$titreEpisode}</h3>");
+    $webPage->appendContent("<h3>{$numEpisode} - {$titreEpisode}</h3>");
     $webPage->appendContent("</div>");
     $webPage->appendContent("<div><p>{$descEpisode}</p></div>");
 
