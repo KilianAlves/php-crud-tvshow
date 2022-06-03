@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Entity\Exception\ParameterException;
 use Entity\TvShow;
 use Entity\Exception\EntityNotFoundException;
 use Html\AppWebPage;
