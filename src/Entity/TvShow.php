@@ -9,7 +9,7 @@ use PDO;
 
 class TvShow
 {
-    private int $id;
+    private ?int $id;
     private string $name;
     private string $originalName;
     private string $homepage;
@@ -83,5 +83,19 @@ class TvShow
             throw new EntityNotFoundException("Artist with id $id not found");
         }
         return $artist;
+    }
+    public function delete()
+    {
+        #Supprime le Show
+        $stmt = MyPDO::getInstance()->prepare(
+            <<<'SQL'
+            DELETE 
+            FROM tvshow
+            WHERE id = ?
+            SQL
+        );
+        $stmt->execute($this->id);
+        $this->id = null;
+        return $this;
     }
 }
