@@ -15,7 +15,7 @@ class TvShow
     private string $originalName;
     private string $homepage;
     private string $overview;
-    private int $posterId;
+    private ?int $posterId;
 
     private function __construct()
     {
@@ -24,7 +24,7 @@ class TvShow
     /**
      * @return int
      */
-    public function getPosterId(): int
+    public function getPosterId(): ?int
     {
         return $this->posterId;
     }
@@ -32,7 +32,7 @@ class TvShow
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -112,7 +112,7 @@ class TvShow
     /**
      * @param int $posterId
      */
-    public function setPosterId(int $posterId): void
+    public function setPosterId(?int $posterId): void
     {
         $this->posterId = $posterId;
     }
