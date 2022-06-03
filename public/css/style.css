@@ -84,12 +84,16 @@ body > main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 4;
+    flex: 4;
+}
+
+.season:first-child > div:first-child > img {
+    flex: 1;
 }
 
 .season:first-child > div:nth-child(2) {
     margin: 15px;
-    flex-grow: 8;
+    flex: 8;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -103,10 +107,15 @@ body > main {
     align-items:center;
 }
 
-.season:nth-child(1n+2) > div {
+.season:nth-child(1n+2) > div:nth-child(2) {
     padding: 15px;
 }
-
+/*
+.season:nth-child(1n+2) > a {
+    padding: 15px;
+    background-color: aliceblue;
+}
+*/
 .season:nth-child(1n+2) > div:first-child {
     padding: 0px;
     display: flex;
@@ -123,7 +132,7 @@ body > footer {
     border-radius: 10px;
 }
 
-a {
+h3 > a {
     color: #001D3D;
     text-decoration: none;
     background-color: #FFD60A;
