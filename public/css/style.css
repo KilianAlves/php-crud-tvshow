@@ -40,7 +40,15 @@ body > main {
     index.php
 */
 
-.serie:nth-child(odd) {
+.serie {
+    color: aliceblue;
+}
+
+.list > a {
+    text-decoration: none;
+}
+
+.list > a:nth-child(even) > .serie {
     background-color: #001D3D;
     padding: 1em;
     margin-bottom: .7em;
@@ -48,7 +56,7 @@ body > main {
     display: flex;
 }
 
-.serie:nth-child(even) {
+.list > a:nth-child(odd) > .serie {
     background-color: #001D3D;
     padding: 1em;
     margin-bottom: .7em;
@@ -57,11 +65,11 @@ body > main {
     flex-direction: row-reverse;
 }
 
-.serie > div:nth-child(2) {
+.list > a > .serie > div:nth-child(2) {
     margin: 1em;
 }
 
-.serie > div:nth-child(1) {
+.list > a > .serie > div:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
