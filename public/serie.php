@@ -19,6 +19,12 @@ $listeSeason = SeasonCollection::findByTvShowId($serieId);
 
 $webPage = new AppWebPage("Série Tv : {$serie->getName()}"); #crée page web avec titre en nom
 
+#Menu
+$webPage->appendContent("<div class='menu'><a href='index.php'>Retour a la liste des séries</a>");
+$webPage->appendContent("<a href='admin/tvShow-form.php?tvShowId={$serieId}'>Modifier la série</a>");
+$webPage->appendContent("<a href='admin/tvShow-delete.php?tvShowId={$serieId}'>Supprimer la série</a>");
+$webPage->appendContent("</div>");
+
 #EscapeString des info de la serie
 $photo = $webPage::escapeString("{$serie->getPosterId()}");
 $name = $webPage::escapeString("{$serie->getName()}");

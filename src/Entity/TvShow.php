@@ -150,7 +150,7 @@ class TvShow
             WHERE id = ?
             SQL
         );
-        $stmt->execute($this->id);
+        $stmt->execute([$this->id]);
         $this->id = null;
         return $this;
     }
