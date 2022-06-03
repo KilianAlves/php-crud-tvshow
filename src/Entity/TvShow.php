@@ -178,5 +178,22 @@ class TvShow
             "homepage" => $this->homepage, "overview" => $this->overview,
             "posterId" => $this->posterId]);
     }
+    public function update() : TvShow {
+
+        $stmt = MyPdo::getInstance()->prepare(
+            <<<SQL
+            UPDATE artist
+            SET name = :name, originalName = :originalName, homepage = :homepage, overview = :overview, posterId = :posterId 
+            WHERE id = :id
+            SQL
+        );
+
+        $stmt->execute([":id" => $this->id,
+            ":name" => $this->name, "originalName" => $this->originalName,
+            "homepage" => $this->homepage, "overview" => $this->overview,
+            "posterId" => $this->posterId]);
+        return $this;
+    }
+
     
 }
