@@ -60,6 +60,14 @@ body > main {
     text-decoration: none;
 }
 
+.menu > a:nth-child(3) {
+    border-radius: .7em;
+    padding: .5em;
+    background-color: #b90000;
+    color: aliceblue;
+    text-decoration: none;
+}
+
 
 /*
     Style pour la collection de Series (TvShow)
