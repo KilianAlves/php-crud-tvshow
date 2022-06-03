@@ -8,9 +8,10 @@ use Entity\Exception\EntityNotFoundException;
 use Html\AppWebPage;
 use Html\Form\TvShowForm;
 
-$webpage = new AppWebPage("Admin: Artist");
+$webpage = new AppWebPage("Admin: TvShow");
 
 try {
+    $tvShow = null;
     if (isset($_GET['tvShowId'])) {
         if (!ctype_digit($_GET['tvShowId'])) {
             throw new ParameterException("Erreur de paramètre");
