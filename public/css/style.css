@@ -1,5 +1,7 @@
 /* Feuille de style */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap');
+
 html, body {
     margin: 0;
     padding: 0;
@@ -9,6 +11,8 @@ html, body {
     background-color: #000814;
     color: aliceblue;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Rubik', sans-serif;*/
 }
 
 body > header {
