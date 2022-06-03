@@ -117,5 +117,8 @@ class TvShow
         $this->id = null;
         return $this;
     }
-    
+    public static function create(string $name, string $originalName, string $homepage, string $overview, int $posterId, ?int $id = null): TvShow
+    {
+        return new TvShow($name,$originalName,$overview, (string)$posterId, (string)$id);
+    }
 }
