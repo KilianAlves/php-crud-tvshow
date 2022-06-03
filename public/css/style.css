@@ -8,22 +8,23 @@ html, body {
     flex-direction: column;
     background-color: #000814;
     color: aliceblue;
+    text-decoration: none;
 }
 
 body > header {
     background-color: #FFC300;
     color: #001D3D;
     text-align: center;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    margin-bottom: .7em;
+    border-radius: .7em;
 }
 
 body > main {
     background-color: #003566;
-    padding: 10px 10px 0px 10px;
-    margin-bottom: 10px;
-    border: 10px solid #003566;
-    border-radius: 10px;
+    padding: .7em .7em 0 .7em;
+    margin-bottom: .7em;
+    border: .7em solid #003566;
+    border-radius: .7em;
     flex-grow: 1;
     overflow: auto;
 }
@@ -41,23 +42,23 @@ body > main {
 
 .serie:nth-child(odd) {
     background-color: #001D3D;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    padding: 1em;
+    margin-bottom: .7em;
+    border-radius: .7em;
     display: flex;
 }
 
 .serie:nth-child(even) {
     background-color: #001D3D;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    padding: 1em;
+    margin-bottom: .7em;
+    border-radius: .7em;
     display: flex;
     flex-direction: row-reverse;
 }
 
 .serie > div:nth-child(2) {
-    margin: 15px;
+    margin: 1em;
 }
 
 .serie > div:nth-child(1) {
@@ -74,10 +75,11 @@ body > main {
 
 .season {
     background-color: #001D3D;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    padding: 1em;
+    margin-bottom: .7em;
+    border-radius: .7em;
     display: flex;
+    text-decoration: none;
 }
 
 .season:first-child > div:first-child {
@@ -87,12 +89,12 @@ body > main {
     flex: 4;
 }
 
-.season:first-child > div:first-child > img {
+.season > div > img {
     flex: 1;
 }
 
 .season:first-child > div:nth-child(2) {
-    margin: 15px;
+    margin: 1em;
     flex: 8;
     display: flex;
     flex-direction: column;
@@ -108,14 +110,13 @@ body > main {
 }
 
 .season:nth-child(1n+2) > div:nth-child(2) {
-    padding: 15px;
+    padding: 1em;
 }
-/*
-.season:nth-child(1n+2) > a {
-    padding: 15px;
-    background-color: aliceblue;
+
+.season:nth-child(1n+2) h2 {
+    color: #FFD60A;
 }
-*/
+
 .season:nth-child(1n+2) > div:first-child {
     padding: 0px;
     display: flex;
@@ -128,16 +129,16 @@ body > main {
 body > footer {
     background-color: rgb(53, 53, 53);
     text-align: center;
-    padding: 10px;
-    border-radius: 10px;
+    padding: .7em;
+    border-radius: .7em;
 }
 
 h3 > a {
     color: #001D3D;
     text-decoration: none;
     background-color: #FFD60A;
-    padding: 5px 7px 5px 7px;
-    border-radius: 10px;
+    padding: .5em;
+    border-radius: .7em;
 }
 
 @media screen and (min-width: 960px) {
