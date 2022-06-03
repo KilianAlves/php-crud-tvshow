@@ -218,6 +218,29 @@ body > main {
     align-items: center;
 }
 
+
+/*
+    Style pour les formulaires Admin
+*/
+
+.list > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.list > form > input {
+    margin-bottom: .7em;
+}
+
+.list > form > input:last-child {
+    border: none;
+    border-radius: .7em;
+    padding: .5em;
+    background-color: #FFD60A;
+    color: #001D3D;
+    text-decoration: none;
+}
+
 /*=============================================*/
 
 body > footer {
