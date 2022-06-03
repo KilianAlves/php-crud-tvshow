@@ -40,10 +40,10 @@ foreach (TvShowFiltreCollection::findAllByIdGenre($filtreId) as $serie) {
     $photo = $webPage::escapeString("{$serie->getPosterId()}");
     $lienSerie = $webPage::escapeString("{$serie->getId()}");
     #AppendContent
-    $webPage->appendContent("<div class='serie'>");#Div deb
+    $webPage->appendContent("<a href='serie.php?serieId={$lienSerie}'><div class='serie'>");#Div deb
     $webPage->appendContent("<div><img src='poster.php?id={$photo}'></div>");
     $webPage->appendContent("<div>");
-    $webPage->appendContent("<h3> <a href='serie.php?serieId={$lienSerie}'>$textname</a></h3>\n");
-    $webPage->appendContent("<p>{$resume}</p></div></div>");#fin div deb
+    $webPage->appendContent("<h3>$textname</h3>\n");
+    $webPage->appendContent("<p>{$resume}</p></div></div></a>");#fin div deb
 }
 echo $webPage->toHTMl();
