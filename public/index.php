@@ -23,7 +23,7 @@ $webPage->appendContent('<input type="submit"></input>');
 $webPage->appendContent("</form>");
 #Fin formulaire
 
-$webPage->appendContent("<h3><a href='admin/tvShow-form.php'>Ajouter une serie</a></h3></div>");
+$webPage->appendContent("<a href='admin/tvShow-form.php'>Ajouter une serie</a></div>");
 #fin Menu
 
 #Listes des series
