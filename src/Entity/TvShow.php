@@ -165,4 +165,18 @@ class TvShow
         $show->setId($id);
         return $show;
     }
+
+    public function insert()
+    {
+        $inser = MyPdo::getInstance()->prepare(
+            <<<SQL
+            INSERT INTO tvshow (name,originalName,homepage,overview,posterId)
+            VALUES (:name, :originalName, :homepage, :overview, :posterId)
+            SQL
+        );
+        $inser->execute([":name" => $this->name, "originalName" => $this->originalName,
+            "homepage" => $this->homepage, "overview" => $this->overview,
+            "posterId" => $this->posterId]);
+    }
+    
 }
